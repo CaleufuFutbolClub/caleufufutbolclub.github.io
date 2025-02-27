@@ -1,0 +1,338 @@
+/* Diseño general del body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Estilo para el header */
+header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Mostrar solo la imagen para PC */
+.header-img-pc {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Ocultar la imagen para móviles por defecto */
+.header-img-movil {
+    display: none;
+}
+
+/* Estilo de la barra de navegación */
+nav {
+    background-color: #ab0101;
+    padding: 1.5vw 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 4px 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background-color: #ce0606;
+}
+
+/* Estilo de los íconos sociales */
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #db0909;
+}
+
+/* Estilo para el menú hamburguesa */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    nav {
+        padding: 3vw 2vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ab0101;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 4vw 3vw;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ab0101;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /* Para pantallas pequeñas, ocultar la imagen de PC y mostrar la de móvil */
+    .header-img-pc {
+        display: none;
+    }
+
+    .header-img-movil {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/* Estilo general para la sección Match Day */
+.match-day {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.match-day h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.match-teams {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espacio entre los escudos */
+    flex-wrap: wrap; /* Permite que los escudos se ajusten si no caben */
+}
+
+.team {
+    text-align: center;
+    flex: 1 1 45%; /* Esto asegura que los equipos ocupen el 45% del contenedor, ajustándose bien */
+    max-width: 120px; /* Limita el tamaño máximo del equipo */
+    margin-bottom: 20px;
+}
+
+.team-logo {
+    width: 100%; /* Hace que el escudo ocupe todo el ancho disponible */
+    max-width: 120px; /* Tamaño máximo de los escudos */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.match-date {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .match-teams {
+        gap: 30px; /* Menos espacio entre los escudos en pantallas más pequeñas */
+        justify-content: center; /* Asegura que los escudos estén centrados */
+    }
+
+    .team {
+        flex: 1 1 40%; /* Los equipos ocuparán 40% del espacio disponible */
+        max-width: 100px; /* Tamaño máximo reducido en móviles */
+    }
+
+    .match-day h2 {
+        font-size: 1.5rem; /* Reducir el tamaño del título */
+    }
+
+    .match-date {
+        font-size: 1rem; /* Reducir el tamaño de la fecha */
+    }
+}
+
+/* Estilo de pie de página */
+footer {
+    background-color: #ab0101; /* Color de fondo rojo */
+    padding: 3px; /* Agrega un padding alrededor del contenido */
+    text-align: center; /* Centra el texto */
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente si lo necesitas */
+}
+
+.social-icons a {
+    color: white; /* Color blanco para los iconos */
+    font-size: 24px; /* Ajusta el tamaño del icono */
+    margin: 0 15px; /* Espacio entre los iconos */
+    transition: color 0.3s ease-in-out; /* Transición suave en el cambio de color */
+}
+
+.social-icons a:hover {
+    color: #db0909; /* Color al pasar el mouse sobre el icono */
+}
+
+/* Estilos para la sección Noticias */
+#noticias {
+    padding: 2rem;
+    text-align: center;
+}
+
+#noticias h2 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#noticias p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Artículo de la noticia */
+.news-article {
+    margin-top: 20px;
+}
+
+.news-article h1.title {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.news-article p.content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.news-article img.news-image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Media Queries para hacerlo responsive */
+@media (max-width: 1024px) {
+    #noticias h2 {
+        font-size: 2rem;
+    }
+
+    #noticias p {
+        font-size: 1.1rem;
+    }
+
+    .news-article h1.title {
+        font-size: 2.2rem;
+    }
+
+    .news-article p.content {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #noticias h2 {
+        font-size: 1.8rem;
+    }
+
+    #noticias p {
+        font-size: 1rem;
+    }
+
+    .news-article h1.title {
+        font-size: 2rem;
+    }
+
+    .news-article p.content {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #noticias h2 {
+        font-size: 1.5rem;
+    }
+
+    #noticias p {
+        font-size: 0.9rem;
+    }
+
+    .news-article h1.title {
+        font-size: 1.8rem;
+    }
+
+    .news-article p.content {
+        font-size: 0.9rem;
+    }
+}
